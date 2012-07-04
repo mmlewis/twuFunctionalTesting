@@ -1,0 +1,15 @@
+.idea
+*.class
+target/
+out/
+*.iml
+.vagrant
+*.log
+*.ipr
+*.iws
+*.metadata/
+*.DS_Store
+*swp
+Functional Test/reports/
+.gradle
+build/

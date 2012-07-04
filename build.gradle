@@ -1,0 +1,34 @@
+apply plugin: 'java'
+apply plugin: 'jetty'
+apply plugin: 'war'
+apply plugin: 'idea'
+
+repositories {
+   mavenCentral()
+}
+
+dependencies {
+   compile 'org.hibernate:hibernate-core:4.0.1.Final',
+           'javax.servlet:servlet-api:2.5',
+           'org.springframework:spring-core:3.1.1.RELEASE',
+           'org.springframework:spring-webmvc:3.1.1.RELEASE',
+           'org.springframework:spring-web:3.1.1.RELEASE',
+           'commons-dbcp:commons-dbcp:1.4',
+           'org.springframework:spring-orm:3.1.0.RELEASE',
+           'com.h2database:h2:1.2.145',
+           'cglib:cglib:2.2.2',
+           'org.freemarker:freemarker:2.3+',
+           'ch.qos.logback:logback-classic:1.0.0',
+           'commons-lang:commons-lang:2.6',
+           'org.jasig.cas:cas-client-core:3.1.10',
+           'hsqldb:hsqldb:1.8.0.10',
+           'mysql:mysql-connector-java:5.1.18',
+           'org.springframework.security:spring-security-core:3.1.0.RELEASE',
+           'org.springframework.security:spring-security-cas:3.1.0.RELEASE',
+           'org.springframework.security:spring-security-config:3.1.0.RELEASE',
+           'org.springframework.security:spring-security-web:3.1.0.RELEASE'
+           
+    testCompile 'junit:junit:4.8.1',
+                'org.springframework:spring-test:3.1.1.RELEASE',
+                'org.mockito:mockito-all:1.9.0'
+}
