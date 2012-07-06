@@ -1,7 +1,7 @@
-package kabbadi.controller;
+package functionalTestingExample.controller;
 
-import kabbadi.domain.User;
-import kabbadi.service.UserService;
+import functionalTestingExample.domain.User;
+import functionalTestingExample.service.UserService;
 import org.junit.Test;
 import org.springframework.web.servlet.ModelAndView;
 

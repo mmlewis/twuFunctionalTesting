@@ -1,7 +1,8 @@
-package kabbadi.domain.db;
+package functionalTestingExample.domain.db;
 
-import kabbadi.IntegrationTest;
-import kabbadi.domain.User;
+import functionalTestingExample.IntegrationTest;
+import functionalTestingExample.domain.Item;
+import functionalTestingExample.domain.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.Test;
@@ -10,20 +11,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
 
-public class UserRepositoryIntegrationTest extends IntegrationTest {
+public class ItemRepositoryIntegrationTest extends IntegrationTest {
 
     @Autowired
     private SessionFactory sessionFactory;
 
     @Autowired
-    private GenericRepository<User>  userRepository;
+    private GenericRepository<Item>  itemRepository;
 
     @Test
     public void shouldChooseUserByUserName() {
-        addUserToRepository("Bill");
-        GenericRepository<User> userRepository =  new GenericRepository<User>(sessionFactory, User.class);
-        User actualUser = userRepository.findBy(User.NAME_PROPERTY, "Bill");
-        assertThat(actualUser.getName(), equalTo("Bill"));
+        addUserToRepository("To Kill A Mockingbird");
+        GenericRepository<Item> itemRepository =  new GenericRepository<>(sessionFactory, Item.class);
+        Item item = itemRepository.findBy(Item.NAME_PROPERTY, "To Kill A");
+        assertThat(item.getName(), equalTo("To Kill A Mockingbird"));
     }
 
     private void addUserToRepository(String name) {

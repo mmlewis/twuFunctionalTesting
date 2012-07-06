@@ -1,7 +1,7 @@
-package kabbadi.service;
+package functionalTestingExample.service;
 
-import kabbadi.domain.User;
-import kabbadi.domain.db.GenericRepository;
+import functionalTestingExample.domain.User;
+import functionalTestingExample.domain.db.GenericRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

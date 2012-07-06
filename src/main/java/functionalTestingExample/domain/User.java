@@ -1,14 +1,6 @@
-package kabbadi.domain;
-
-import org.hsqldb.Library;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
+package functionalTestingExample.domain;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Set;
 
 @Entity
 public class User {

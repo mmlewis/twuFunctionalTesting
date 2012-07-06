@@ -1,7 +1,7 @@
-package kabbadi.controller;
+package functionalTestingExample.controller;
 
-import kabbadi.domain.User;
-import kabbadi.service.UserService;
+import functionalTestingExample.domain.User;
+import functionalTestingExample.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

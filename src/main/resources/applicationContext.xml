@@ -13,7 +13,7 @@
 
     <context:annotation-config/>
     <mvc:annotation-driven/>
-    <context:component-scan base-package="kabbadi"/>
+    <context:component-scan base-package="functionalTestingExample"/>
 
     <bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="org.h2.Driver"/>
@@ -32,8 +32,8 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
-    <bean id="userRepository" class="kabbadi.domain.db.GenericRepository">
-        <constructor-arg value="kabbadi.domain.User"/>
+    <bean id="userRepository" class="functionalTestingExample.domain.db.GenericRepository">
+        <constructor-arg value="functionalTestingExample.domain.User"/>
         <constructor-arg ref="sessionFactory"/>
     </bean>
 

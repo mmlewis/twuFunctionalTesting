@@ -1,4 +1,4 @@
-package kabbadi.domain.db;
+package functionalTestingExample.domain.db;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

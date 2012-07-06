@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>kabaddi</title>
+    <title>title</title>
 </head>
 
 <body>
