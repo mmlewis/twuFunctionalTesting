@@ -1,22 +1,19 @@
 package functionalTestingExample.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-import static javax.persistence.GenerationType.AUTO;
+import javax.persistence.*;
 
 @Entity
 public class Item {
 
     @Id
-    @GeneratedValue(strategy = AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     public static final String NAME_PROPERTY = "name";
 
     private String name;
+    private double price;
+    private double tax;
 
     @Deprecated
     public Item() {
@@ -26,12 +23,22 @@ public class Item {
         this.name = name;
     }
 
-    public Item(int id, String name) {
+    public Item(int id, String name, double price, double tax) {
         this.id = id;
         this.name = name;
+        this.price = price;
+        this.tax = tax;
     }
 
     public String getName() {
         return name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public double getTax() {
+        return tax;
     }
 }

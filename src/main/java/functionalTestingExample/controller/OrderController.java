@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.swing.*;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
@@ -23,11 +26,11 @@ public class OrderController {
 
     @RequestMapping(value = "/order", method = GET)
     public ModelAndView create() {
-        ModelAndView modelAndView = new ModelAndView("/orders");
-
         List items = itemService.getAllItems();
-        modelAndView.getModel().put("items", items);
 
-        return modelAndView;
+        Map<String, Object> model = new HashMap<String, Object>();
+        model.put("items", items.iterator());
+
+        return new ModelAndView("/order/index", model);
     }
 }

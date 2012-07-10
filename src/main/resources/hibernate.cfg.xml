@@ -21,7 +21,7 @@
 
         <property name="hibernate.id.new_generator_mappings">true</property>
 
-        <mapping class="functionalTestingExample.domain.User"/>
+        <mapping class="functionalTestingExample.domain.Item"/>
 
     </session-factory>
 

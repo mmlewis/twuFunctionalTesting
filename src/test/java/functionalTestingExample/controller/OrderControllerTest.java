@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -38,14 +39,14 @@ public class OrderControllerTest {
     public void shouldAddItemsToModel() {
         OrderController orderController = new OrderController(itemService);
 
-        List items = new ArrayList();
-        items.add(mock(Item.class));
-        items.add(mock(Item.class));
+        List<Item> items = new ArrayList<Item>();
+        Item mockItem = mock(Item.class);
+        items.add(mockItem);
         when(itemService.getAllItems()).thenReturn(items);
 
         ModelAndView modelAndView = orderController.create();
-        List actualItems = (List) modelAndView.getModel().get("items");
+        Iterator<Item> retrievedItems = (Iterator<Item>) modelAndView.getModel().get("items");
 
-        assertThat(actualItems.size(), is(2));
+        assertThat(retrievedItems.next(), is(mockItem));
     }
 }

@@ -2,7 +2,6 @@ package functionalTestingExample.domain.db;
 
 import functionalTestingExample.IntegrationTest;
 import functionalTestingExample.domain.Item;
-import functionalTestingExample.domain.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.Test;
@@ -21,15 +20,15 @@ public class ItemRepositoryIntegrationTest extends IntegrationTest {
 
     @Test
     public void shouldChooseUserByUserName() {
-        addUserToRepository("To Kill A Mockingbird");
-        GenericRepository<Item> itemRepository =  new GenericRepository<>(sessionFactory, Item.class);
-        Item item = itemRepository.findBy(Item.NAME_PROPERTY, "To Kill A");
-        assertThat(item.getName(), equalTo("To Kill A Mockingbird"));
+        addUserToRepository("Harry Potter");
+        GenericRepository<Item> itemRepository =  new GenericRepository<Item>(sessionFactory, Item.class);
+        Item item = itemRepository.findBy(Item.NAME_PROPERTY, "Harry Potter");
+        assertThat(item.getName(), equalTo("Harry Potter"));
     }
 
     private void addUserToRepository(String name) {
         Session currentSession = sessionFactory.getCurrentSession();
-        String sql = "insert into User (id, name) values (27, '" + name + "');";
+        String sql = "insert into Item (id, name, price, tax) values (27, '" + name + "' , 10.0, 12.0);";
         currentSession.createSQLQuery(sql).executeUpdate();
     }
     

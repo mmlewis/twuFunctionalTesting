@@ -32,8 +32,8 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
-    <bean id="userRepository" class="functionalTestingExample.domain.db.GenericRepository">
-        <constructor-arg value="functionalTestingExample.domain.User"/>
+    <bean id="itemRepository" class="functionalTestingExample.domain.db.GenericRepository">
+        <constructor-arg value="functionalTestingExample.domain.Item"/>
         <constructor-arg ref="sessionFactory"/>
     </bean>
 

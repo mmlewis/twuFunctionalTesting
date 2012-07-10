@@ -6,7 +6,7 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"
        xmlns:mvc="http://www.springframework.org/schema/mvc">
 
-    <context:component-scan base-package="kabbadi.controller"/>
+    <context:component-scan base-package="functionalTestingExample.controller"/>
 
     <bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
         <property name="templateLoaderPath" value="/WEB-INF/freemarker/"/>
