@@ -3,6 +3,7 @@
     <link href="/functionalTestingProject/static/css/bootstrap.css" rel="stylesheet"/>
 
     <script src="/functionalTestingProject/static/js/lib/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script src="/functionalTestingProject/static/js/order_validations.js" type="text/javascript"></script>
     <script src="/functionalTestingProject/static/js/order.js" type="text/javascript"></script>
 
     <#import "/spring.ftl" as spring />

@@ -61,4 +61,8 @@ public class Order implements Serializable {
     public Item getItem() {
         return item;
     }
+
+    public int getId() {
+        return id;
+    }
 }

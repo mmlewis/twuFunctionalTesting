@@ -29,7 +29,7 @@ public class OrderControllerTest {
     public void shouldOpenCreateOrderPage() {
         ModelAndView orderPage = orderController.newOrder();
 
-        assertThat(orderPage.getViewName(), is("order/new"));
+        assertThat(orderPage.getViewName(), is("/order/new"));
     }
 
     @Test

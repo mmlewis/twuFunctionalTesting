@@ -32,11 +32,13 @@ $(function(){
     OrderForm.calculate_total();
 
     $("#submitButton").click(function() {
-        var new_form = $("#newOrderForm");
-        var action = new_form.attr("action");
-        var selected_item_index = $("#items option:selected").val();
+        if(OrderFormValidator.validate()) {
+            var new_form = $("#newOrderForm");
+            var action = new_form.attr("action");
+            var selected_item_index = $("#items option:selected").val();
 
-        new_form.attr("action", (action + selected_item_index));
+            new_form.attr("action", (action + selected_item_index));
+        }
     });
 
     $("#items").change(function() {

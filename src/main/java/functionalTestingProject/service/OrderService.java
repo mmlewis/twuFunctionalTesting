@@ -32,6 +32,7 @@ public class OrderService {
         return orderRepository.save(order);
     }
 
+    @Transactional
     public Order find(int id) {
         Order order = orderRepository.get(id);
         if(order == null) {

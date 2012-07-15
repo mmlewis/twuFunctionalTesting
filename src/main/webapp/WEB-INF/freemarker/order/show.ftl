@@ -9,12 +9,12 @@
 
 <body>
     <div class="form_background">
-        <#if savedOrder??>
+        <#if order??>
            <div class="header">Order Saved!</div>
 
            <div>
                <label for="name">Name: </label>
-               <input name="name" value=${order.name} readonly="readonly" type="text"/>
+               <input name="name" value=${order.name} readonly="readonly" type="text" size="300"/>
            </div>
 
            <div>
@@ -24,7 +24,7 @@
 
            <div>
                <label for="item">Item Name: </label>
-               <input name="item" value=${order.item.name} readonly="readonly" type="text"/>
+               <input name="item" value=${order.item.name} readonly="readonly" type="text" size="300"/>
            </div>
 
            <div>
