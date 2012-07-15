@@ -42,6 +42,9 @@ public class OrderController {
     @RequestMapping(value = "/order/create", method = POST)
     public ModelAndView create(@ModelAttribute @Valid Order order, BindingResult bindingResult) throws IOException {
         Map<String, Object> model = new HashMap<String, Object>();
+        if(bindingResult.hasErrors()) {
+            return new ModelAndView("/order/show", model);
+        }
 
         Order savedOrder = orderService.save(order);
         model.put("savedOrder", savedOrder);

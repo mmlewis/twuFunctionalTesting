@@ -40,6 +40,14 @@ public class Item implements Serializable {
         return Integer.toString(id);
     }
 
+    public String getPrice() {
+        return Integer.toString((int) price);
+    }
+
+    public String getTax() {
+        return Integer.toString((int) tax);
+    }
+
     public String asJson() {
         return "{\"price\": \"" + price +"\"," +
                 "\"tax\": \"" + tax + "\"}";

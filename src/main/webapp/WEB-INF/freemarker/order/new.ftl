@@ -33,9 +33,10 @@
             </select>
         </div>
 
-        <div>Price: <span id="current_price"/></div>
-        <div>Tax: <span id="current_tax"/></div>
-        <div>Total: <span id="current_total" name="total"/></div>
+        <#assign first_item=items[0]/>
+        <div>Price: <span id="current_price">${first_item.price}</span></div>
+        <div>Tax: <span id="current_tax">${first_item.tax}</span></div>
+        <div>Total: <span id="current_total" name="total"></span></div>
 
         <input id="submitButton" type="submit" name="submitButton" />
 
