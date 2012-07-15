@@ -1,7 +1,7 @@
-package functionalTestingExample.service;
+package functionalTestingProject.service;
 
-import functionalTestingExample.domain.Item;
-import functionalTestingExample.domain.db.GenericRepository;
+import functionalTestingProject.domain.Item;
+import functionalTestingProject.domain.db.GenericRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -25,5 +25,20 @@ public class ItemService {
     @Transactional
     public List getAllItems() {
         return itemRepository.list();
+    }
+
+    @Transactional
+    public Item save(Item item) {
+        return itemRepository.save(item);
+    }
+
+    @Transactional
+    public Item findById(int id) {
+        Item item = itemRepository.get(id);
+        if(item == null) {
+            item = new Item();
+        }
+
+        return item;
     }
 }

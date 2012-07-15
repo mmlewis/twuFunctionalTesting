@@ -13,7 +13,8 @@
 
     <context:annotation-config/>
     <mvc:annotation-driven/>
-    <context:component-scan base-package="functionalTestingExample"/>
+    <context:component-scan base-package="functionalTestingProject"/>
+    <mvc:default-servlet-handler/>
 
     <bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="org.h2.Driver"/>
@@ -32,8 +33,13 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
-    <bean id="itemRepository" class="functionalTestingExample.domain.db.GenericRepository">
-        <constructor-arg value="functionalTestingExample.domain.Item"/>
+    <bean id="orderRepository" class="functionalTestingProject.domain.db.GenericRepository">
+        <constructor-arg value="functionalTestingProject.domain.Order"/>
+        <constructor-arg ref="sessionFactory"/>
+    </bean>
+
+    <bean id="itemRepository" class="functionalTestingProject.domain.db.GenericRepository">
+        <constructor-arg value="functionalTestingProject.domain.Item"/>
         <constructor-arg ref="sessionFactory"/>
     </bean>
 

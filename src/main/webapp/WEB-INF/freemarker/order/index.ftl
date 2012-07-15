@@ -1,17 +1,13 @@
 <!DOCTYPE html>
+    <link href="/functionalTestingProject/static/css/bootstrap.css" rel="stylesheet"/>
 <html>
+
 <head>
-    <#import "/spring.ftl" as spring />
-    <title>Order Page</title>
+    <title>Home</title>
 </head>
 
 <body>
-    <select>
-        <#list items as item>
-            <option>${item.name}</option>
-        </#list>
-    </select>
-
-    <div id="current_price">Price: </div>
+    <link href="/functionalTestingProject/order">Place an Order</link>
 </body>
+
 </html>

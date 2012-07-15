@@ -1,4 +1,4 @@
-package functionalTestingExample;
+package functionalTestingProject;
 
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;

@@ -26,8 +26,11 @@ dependencies {
            'org.springframework.security:spring-security-core:3.1.0.RELEASE',
            'org.springframework.security:spring-security-cas:3.1.0.RELEASE',
            'org.springframework.security:spring-security-config:3.1.0.RELEASE',
-           'org.springframework.security:spring-security-web:3.1.0.RELEASE'
-           
+           'org.springframework.security:spring-security-web:3.1.0.RELEASE',
+           'org.projectlombok:lombok:0.11.0',
+           'javax.validation:validation-api:1.0.0.GA',
+           'org.hibernate:hibernate-validator:4.0.2.GA'
+
     testCompile 'junit:junit:4.8.1',
                 'org.springframework:spring-test:3.1.1.RELEASE',
                 'org.mockito:mockito-all:1.9.0'

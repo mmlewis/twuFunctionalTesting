@@ -1,4 +1,4 @@
-package functionalTestingExample.domain.db;
+package functionalTestingProject.domain.db;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
