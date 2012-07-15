@@ -29,14 +29,14 @@ public class OrderRepositoryIntegrationTest extends IntegrationTest {
     @Test
     public void shouldSaveOrderToRepository() {
         GenericRepository<Order> orderRepository =  new GenericRepository<Order>(sessionFactory, Order.class);
-        Order savedOrder = orderRepository.save(new Order(3, "Some name", "email@email.com"));
+        Order savedOrder = orderRepository.save(new Order(3, "Some name", "email@email.com", 10.0));
 
         assertThat(savedOrder.getName(), equalTo("Some name"));
     }
 
     private void addOrderToRepository(String name) {
         Session currentSession = sessionFactory.getCurrentSession();
-        String sql = "insert into orders (id, name, email) values (27, '" + name + "' , 'test@email.com');";
+        String sql = "insert into orders (id, name, email, total) values (27, '" + name + "' , 'test@email.com', '10.0');";
         currentSession.createSQLQuery(sql).executeUpdate();
     }
     

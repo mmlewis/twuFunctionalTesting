@@ -51,13 +51,4 @@ public class OrderController {
 
         return new ModelAndView("/order/show", model);
     }
-
-    @RequestMapping(value = "order/show", method = GET)
-    public ModelAndView get(@ModelAttribute Order order) {
-        Map<String, Object> model = new HashMap<String, Object>();
-        model.put("order", order);
-
-        return new ModelAndView("order/show", model);
-    }
-
 }
