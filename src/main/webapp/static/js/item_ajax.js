@@ -14,6 +14,7 @@ var OrderForm = function() {
         var total = get_price() + total_tax;
 
         $("#current_total").text(total);
+        $("#hidden_current_total").val(total);
     };
 
     get_price = function() {

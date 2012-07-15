@@ -29,14 +29,19 @@ public class Order implements Serializable {
     @Column
     private double total;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
+    private Item item;
+
     @Deprecated
     public Order() {}
 
-    public Order(int id, String name, String email, double total) {
+    public Order(int id, String name, String email, double total, Item item) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.total = total;
+        this.item = item;
     }
 
     public String getName() {
@@ -45,5 +50,9 @@ public class Order implements Serializable {
 
     public String getEmail() {
         return email;
+    }
+
+    public double getTotal() {
+        return total;
     }
 }

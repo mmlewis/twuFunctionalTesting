@@ -26,9 +26,9 @@
 
         <div>
             <label for="item">Item: </label>
-            <select id="items" name="item">
+            <select id="items">
                 <#list items as item>
-                    <option class="order_item" value=${item.id}>${item.name}</option>
+                    <option class="order_item" name="item" value=${item.id}>${item.name}</option>
                 </#list>
             </select>
         </div>
@@ -36,7 +36,8 @@
         <#assign first_item=items[0]/>
         <div>Price: <span id="current_price">${first_item.price}</span></div>
         <div>Tax: <span id="current_tax">${first_item.tax}</span></div>
-        <div>Total: <span id="current_total" name="total"></span></div>
+        <div>Total: <span id="current_total"/></div>
+        <input type="hidden" id="hidden_current_total" name="total" value=${order.total}/>
 
         <input id="submitButton" type="submit" name="submitButton" />
 
