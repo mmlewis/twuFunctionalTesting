@@ -1,4 +1,39 @@
-
 body {
     padding: 25px;
+    font-color: white;
+}
+
+.form_background {
+    width: 225px;
+    background-color: antiqueWhite;
+    border: solid 1px;
+    padding: 15px;
+}
+
+label, .cost {
+    font-weight: bold !important;
+    font-size: 14px;
+}
+
+#form_title {
+    margin-left: 10px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.cost {
+    margin-bottom: 5px;
+}
+
+#submitButton {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 7px;
+}
+
+.header {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
 }

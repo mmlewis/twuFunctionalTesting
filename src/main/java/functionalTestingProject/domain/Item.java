@@ -1,8 +1,11 @@
 package functionalTestingProject.domain;
 
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
+@Setter
 @Entity
 @Table(name = "ITEMS")
 public class Item implements Serializable {

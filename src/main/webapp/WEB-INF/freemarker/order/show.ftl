@@ -1,19 +1,40 @@
-<!DOCTYPE html>
 <html>
+    <link href="/functionalTestingProject/static/css/order.css" rel="stylesheet"/>
+    <link href="/functionalTestingProject/static/css/bootstrap.css" rel="stylesheet"/>
+
 <head>
     <#import "/spring.ftl" as spring />
     <title>Order Page</title>
 </head>
 
 <body>
-   <#if savedOrder??>
-       <div>Order Saved!</div>
+    <div class="form_background">
+        <#if savedOrder??>
+           <div class="header">Order Saved!</div>
 
-       <label for="name">Name: </label>
-       <div name="name">${order.name}</div>
-   <#else>
-        Sorry the order was not saved..
-   </#if>
+           <div>
+               <label for="name">Name: </label>
+               <input name="name" value=${order.name} readonly="readonly" type="text"/>
+           </div>
+
+           <div>
+               <label for="email">Email: </label>
+               <input name="email" value=${order.email} readonly="readonly" type="text"/>
+           </div>
+
+           <div>
+               <label for="item">Item Name: </label>
+               <input name="item" value=${order.item.name} readonly="readonly" type="text"/>
+           </div>
+
+           <div>
+               <label for="total">Total: </label>
+               <input name="total" value=${order.total} readonly="readonly" type="text"/>
+           </div>
+        <#else>
+            Sorry the order was not saved..
+        </#if>
+    </div>
 
 </body>
 

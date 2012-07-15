@@ -1,30 +1,59 @@
 var OrderForm = function() {
     var self = {
-        name_field = $("#name_field"),
-        email_field = $("#email_field");
+        price: "#current_price",
+        tax: "#current_tax"
     };
 
-    self.validate_name = function() {
-        valid_name = self.name_field.val().length === 0
-        if(!valid_name) {
-            name_field.
-        }
+    self.init = function(new_price, new_tax) {
+        $(self.price).text(new_price);
+        $(self.tax).text(new_tax);
     };
 
-    self.validate_email = function() {
-        if(self.email_field.val().length === 0);
+    self.calculate_total = function() {
+        var total_tax = self.get_price() * self.get_tax();
+        var total = self.get_price() + total_tax;
+
+        $("#current_total").text(total);
+        $("#hidden_current_total").val(total);
     };
 
-    self.validateSubmission = function() {
-        self.validate_name();
-        self.validate_email();
+    self.get_price = function() {
+        return parseFloat($(self.price).text(), 2);
+    }
+
+    self.get_tax = function() {
+        return parseFloat($(self.tax).text(), 2);
     }
 
     return self;
 }();
 
-//function() {
-//    $("#submitButton").submit(function() {
-//        OrderForm.validateSubmission();
-//    });
-//};
+$(function(){
+    OrderForm.calculate_total();
+
+    $("#submitButton").click(function() {
+        var new_form = $("#newOrderForm");
+        var action = new_form.attr("action");
+        var selected_item_index = $("#items option:selected").val();
+
+        new_form.attr("action", (action + selected_item_index));
+    });
+
+    $("#items").change(function() {
+        var id = $(this).val();
+        var data_as_json;
+
+        $.ajax({
+            url: "/functionalTestingProject/item",
+            data: {item_id : id},
+            success: function(data) {
+                data_as_json = JSON.parse(data);
+                OrderForm.init(data_as_json["price"], data_as_json["tax"]);
+                OrderForm.calculate_total();
+            },
+            error: function() {
+                alert('An error occurred, please try selecting another item.');
+            }
+        });
+    });
+});
