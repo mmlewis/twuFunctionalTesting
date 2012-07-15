@@ -1,8 +1,8 @@
-describe("todoRepository", function() {
+describe("OrderForm", function() {
+    it("can get the correct tax", function() {
+        OrderForm.get_price = function() { return "40.00" };
+        OrderForm.get_tax = function() { return "0.10" };
 
-
-  it("validates the name field has a value", function() {
-
-      expect(OrderForm.validName());
+        expect(OrderForm.calculate_total()).toBe(44);
     });
 });

@@ -48,7 +48,7 @@ public class Item implements Serializable {
     }
 
     public String getTax() {
-        return Integer.toString((int) tax);
+        return Double.toString(tax);
     }
 
     public String asJson() {

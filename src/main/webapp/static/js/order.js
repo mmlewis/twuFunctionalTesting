@@ -10,19 +10,19 @@ var OrderForm = function() {
     };
 
     self.calculate_total = function() {
-        var total_tax = self.get_price() * self.get_tax();
-        var total = self.get_price() + total_tax;
-
+        var total = parseInt(self.get_price()) + parseInt(self.get_price() * self.get_tax());
         $("#current_total").text(total);
         $("#hidden_current_total").val(total);
     };
 
     self.get_price = function() {
-        return parseFloat($(self.price).text(), 2);
+        var price = $(self.price).text();
+        return parseFloat(price).toFixed(2);
     }
 
     self.get_tax = function() {
-        return parseFloat($(self.tax).text(), 2);
+        var tax = $(self.tax).text();
+        return parseFloat(tax).toFixed(2);
     }
 
     return self;
