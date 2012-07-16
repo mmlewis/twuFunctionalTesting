@@ -1,12 +1,15 @@
 package functionalTestingProject.controller;
 
 import functionalTestingProject.domain.Item;
+import functionalTestingProject.domain.Order;
 import functionalTestingProject.service.ItemService;
 import functionalTestingProject.service.OrderService;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,18 +33,5 @@ public class OrderControllerTest {
         ModelAndView orderPage = orderController.newOrder();
 
         assertThat(orderPage.getViewName(), is("/order/new"));
-    }
-
-    @Test
-    public void shouldAddItemsToModel() {
-        List<Item> orders = new ArrayList<Item>();
-        Item mockOrder = mock(Item.class);
-        orders.add(mockOrder);
-        when(itemService.getAllItems()).thenReturn(orders);
-
-        ModelAndView modelAndView = orderController.newOrder();
-        List<Item> retrievedItems = (List<Item>) modelAndView.getModel().get("items");
-
-        assertThat(retrievedItems.size(), is(1));
     }
 }

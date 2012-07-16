@@ -3,7 +3,7 @@
     <link href="/functionalTestingProject/static/css/bootstrap.css" rel="stylesheet"/>
 
     <script src="/functionalTestingProject/static/js/lib/jquery-1.7.1.min.js" type="text/javascript"></script>
-    <script src="/functionalTestingProject/static/js/order_validations.js" type="text/javascript"></script>
+    <script src="/functionalTestingProject/static/js/order_validator.js" type="text/javascript"></script>
     <script src="/functionalTestingProject/static/js/order.js" type="text/javascript"></script>
 
     <#import "/spring.ftl" as spring />
@@ -16,6 +16,7 @@
 <body>
     <#assign first_item=items[0]/>
     <#assign create_url='/order/create?itemId='/>
+
     <form action="<@spring.url '${create_url}'/>" id="newOrderForm" class="form_background" method="POST">
         <h4 id="form_title">Place Your Order</h4>
 

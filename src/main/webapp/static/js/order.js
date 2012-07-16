@@ -1,43 +1,55 @@
 var OrderForm = function() {
-    var self = {
-        price: "#current_price",
-        tax: "#current_tax"
-    };
-
-    self.init = function(new_price, new_tax) {
-        $(self.price).text(new_price);
-        $(self.tax).text(new_tax);
-    };
+    var self = {};
 
     self.calculate_total = function() {
-        var total = parseInt(self.get_price()) + parseInt(self.get_price() * self.get_tax());
-        $("#current_total").text(total);
-        $("#hidden_current_total").val(total);
+        var total = parseFloat(self.get_price()) + parseFloat(self.get_total_tax());
+        self.total.text(total);
+        self.hidden_total.val(total);
     };
 
     self.get_price = function() {
-        var price = $(self.price).text();
-        return parseFloat(price).toFixed(2);
+        return self.get_formatted_field(self.price);
+    };
+
+    self.get_total_tax = function() {
+        return parseFloat(self.get_formatted_field(self.price) * self.get_formatted_field(self.tax)).toFixed(2);
+    };
+
+    self.get_formatted_field = function(field) {
+        return parseFloat(field.text()).toFixed(2);
     }
 
-    self.get_tax = function() {
-        var tax = $(self.tax).text();
-        return parseFloat(tax).toFixed(2);
+    self.update = function(new_price, new_tax) {
+        self.price.text(new_price);
+        self.tax.text(new_tax);
     }
 
-    return self;
+    init = function(price_field, tax_field, total_field) {
+        self.price = price_field;
+        self.tax = tax_field;
+        self.total = total_field;
+        self.hidden_total = $("#hidden_current_total");
+
+        return self;
+    };
+
+    return { init:init };
 }();
 
 $(function(){
-    OrderForm.calculate_total();
+    var order_form = OrderForm.init($("#current_price"), $("#current_tax"), $("#current_total"));
+    order_form.calculate_total();
 
-    $("#submitButton").click(function() {
-        if(OrderFormValidator.validate()) {
+    $("#submitButton").click(function(event) {
+        validator = OrderFormValidator.init($("#name_field"), $("#email_field"));
+        if(validator.validate()) {
             var new_form = $("#newOrderForm");
             var action = new_form.attr("action");
             var selected_item_index = $("#items option:selected").val();
 
             new_form.attr("action", (action + selected_item_index));
+        } else {
+            event.preventDefault();
         }
     });
 
@@ -50,8 +62,8 @@ $(function(){
             data: {item_id : id},
             success: function(data) {
                 data_as_json = JSON.parse(data);
-                OrderForm.init(data_as_json["price"], data_as_json["tax"]);
-                OrderForm.calculate_total();
+                order_form.update(data_as_json["price"], data_as_json["tax"]);
+                order_form.calculate_total();
             },
             error: function() {
                 alert('An error occurred, please try selecting another item.');

@@ -5,6 +5,9 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import javax.validation.constraints.AssertTrue;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 @Entity
@@ -22,10 +25,12 @@ public class Order implements Serializable {
     @Column
     private String name;
 
+    @NotEmpty
     @Email
     @Column
     private String email;
 
+    @NotNull
     @Column
     private double total;
 
