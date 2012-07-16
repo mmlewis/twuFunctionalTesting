@@ -32,7 +32,7 @@
                <input name="total" value=${order.total} readonly="readonly" type="text"/>
            </div>
         <#else>
-            Sorry the order was not saved..
+            <div>Sorry the order was not saved..</div>
         </#if>
     </div>
 
