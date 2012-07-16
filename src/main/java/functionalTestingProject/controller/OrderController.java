@@ -42,7 +42,7 @@ public class OrderController {
         return itemService.getAllItems();
     }
 
-    @RequestMapping(value = {"/", ""}, method = GET)
+    @RequestMapping(value = {"/create"}, method = GET)
     public ModelAndView newOrder() {
         Map<String, Object> model = new HashMap<String, Object>();
         model.put("order", new Order());
