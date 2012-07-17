@@ -5,6 +5,7 @@ import functionalTestingProject.domain.Order;
 import functionalTestingProject.service.ItemService;
 import functionalTestingProject.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomNumberEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
@@ -31,6 +32,12 @@ public class OrderController {
     private OrderService orderService;
     private ItemService itemService;
 
+    @InitBinder
+    public void initBinder(WebDataBinder dataBinder) {
+        CustomNumberEditor customNumberEditor = new CustomNumberEditor(Double.class, false);
+        dataBinder.registerCustomEditor(Double.class, "total", customNumberEditor);
+    }
+
     @Autowired
     public OrderController(OrderService orderService, ItemService itemService) {
         this.orderService = orderService;
@@ -42,7 +49,15 @@ public class OrderController {
         return itemService.getAllItems();
     }
 
-    @RequestMapping(value = {"/create"}, method = GET)
+    @RequestMapping(value = {"/"}, method = GET)
+    public ModelAndView index() {
+        Map<String, Object> model = new HashMap<String, Object>();
+        model.put("orders", orderService.getAllItems());
+
+        return new ModelAndView("/order/index", model);
+    }
+
+    @RequestMapping(value = {"/new"}, method = GET)
     public ModelAndView newOrder() {
         Map<String, Object> model = new HashMap<String, Object>();
         model.put("order", new Order());

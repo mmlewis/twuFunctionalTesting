@@ -1,5 +1,5 @@
 <#import "/application.ftl" as layout />
 
 <@layout.template 'Place An Order' >
-    Index of Orders
+    <a href="/functionalTestingProject/order/new">Place an Order</a>
 </@layout.template>

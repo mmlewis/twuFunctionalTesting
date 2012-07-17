@@ -1,19 +1,7 @@
-<!DOCTYPE html>
-    <link href="/functionalTestingProject/static/css/order.css" rel="stylesheet"/>
-    <link href="/functionalTestingProject/static/css/bootstrap.css" rel="stylesheet"/>
+<#import "/application.ftl" as layout />
+<#import "/spring.ftl" as spring />
 
-    <script src="/functionalTestingProject/static/js/lib/jquery-1.7.1.min.js" type="text/javascript"></script>
-    <script src="/functionalTestingProject/static/js/order_validator.js" type="text/javascript"></script>
-    <script src="/functionalTestingProject/static/js/order.js" type="text/javascript"></script>
-
-    <#import "/spring.ftl" as spring />
-<html>
-
-<head>
-    <title>Order Page</title>
-</head>
-
-<body>
+<@layout.template 'Add Order' >
     <#assign first_item=items[0]/>
     <#assign create_url='/order/create?itemId='/>
 
@@ -45,8 +33,5 @@
         <input type="hidden" id="hidden_current_total" name="total" value=${order.total}/>
 
         <input id="submitButton" type="submit" name="submitButton" />
-
     </form>
-</body>
-
-</html>
+</@layout.template>
