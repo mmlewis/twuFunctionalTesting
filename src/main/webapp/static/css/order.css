@@ -41,3 +41,24 @@ label, .cost {
 .error {
     border: solid 2px red;
 }
+
+.order_email {
+    text-align: center;
+}
+
+.order_text {
+    font-size: 14px;
+    margin:5px;
+    clear:both;
+    line-height:20px;
+}
+
+#order_salutation {
+    clear:both;
+    font-weight: italic;
+}
+
+#total_container {
+    padding-top: 7px;
+    line-height: 20px;
+}

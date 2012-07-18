@@ -6,21 +6,16 @@
        <div class="header">Order Saved!</div>
 
        <div>
-           <label for="name">Name: </label>
-           <input name="name" value=${order.name} readonly="readonly" type="text" size="300"/>
+           <div id="order_salutation" class="order_text">Dear ${order.name},</div>
+
+           <div class="order_text">
+                Your order for <b>${order.item.name}</b> was submitted.
+           </div>
+
+           <div class="order_email">This order can be tracked with your email, ${order.email}.</div>
        </div>
 
-       <div>
-           <label for="email">Email: </label>
-           <input name="email" value=${order.email} readonly="readonly" type="text"/>
-       </div>
-
-       <div>
-           <label for="item">Item Name: </label>
-           <input name="item" value=${order.item.name} readonly="readonly" type="text" size="300"/>
-       </div>
-
-       <div>
+       <div id="total_container">
            <label for="total">Total: </label>
            <input name="total" value=${order.total} readonly="readonly" type="text"/>
        </div>
