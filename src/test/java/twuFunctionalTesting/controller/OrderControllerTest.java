@@ -1,12 +1,10 @@
-package functionalTestingProject.controller;
+package twuFunctionalTesting.controller;
 
-import functionalTestingProject.domain.Item;
-import functionalTestingProject.domain.Order;
-import functionalTestingProject.service.ItemService;
-import functionalTestingProject.service.OrderService;
+import twuFunctionalTesting.domain.Order;
+import twuFunctionalTesting.service.ItemService;
+import twuFunctionalTesting.service.OrderService;
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -50,7 +48,7 @@ public class OrderControllerTest {
     public void shouldRedirectToShowOrder() throws IOException {
         Order order = new Order(1, "name", "email", 1.0);
         ModelAndView modelAndView = orderController.create(1, order);
-        assertThat(((RedirectView) modelAndView.getView()).getUrl(), equalTo("/functionalTestingProject/order/show"));
+        assertThat(((RedirectView) modelAndView.getView()).getUrl(), equalTo("/twuFunctionalTesting/order/show"));
     }
 
     @Test

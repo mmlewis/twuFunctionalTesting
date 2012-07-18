@@ -1,7 +1,7 @@
-package functionalTestingProject.controller;
+package twuFunctionalTesting.controller;
 
-import functionalTestingProject.domain.Item;
-import functionalTestingProject.service.ItemService;
+import twuFunctionalTesting.domain.Item;
+import twuFunctionalTesting.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

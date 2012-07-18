@@ -1,8 +1,8 @@
-package functionalTestingProject.controller;
+package twuFunctionalTesting.controller;
 
-import functionalTestingProject.domain.Order;
-import functionalTestingProject.service.ItemService;
-import functionalTestingProject.service.OrderService;
+import twuFunctionalTesting.domain.Order;
+import twuFunctionalTesting.service.ItemService;
+import twuFunctionalTesting.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomNumberEditor;
 import org.springframework.stereotype.Controller;
@@ -72,7 +72,7 @@ public class OrderController {
 
         model.put("orderId", order.getId());
 
-        return new ModelAndView(new RedirectView("/functionalTestingProject/order/show"), model);
+        return new ModelAndView(new RedirectView("/twuFunctionalTesting/order/show"), model);
     }
 
     @RequestMapping(value = "/show", method = GET)

@@ -1,4 +1,4 @@
-package functionalTestingProject.domain;
+package twuFunctionalTesting.domain;
 
 import lombok.Setter;
 

@@ -1,8 +1,7 @@
-package functionalTestingProject.domain.db;
+package twuFunctionalTesting.domain.db;
 
-import functionalTestingProject.IntegrationTest;
-import functionalTestingProject.domain.Item;
-import functionalTestingProject.domain.Order;
+import twuFunctionalTesting.IntegrationTest;
+import twuFunctionalTesting.domain.Order;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.Test;

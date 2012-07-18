@@ -1,7 +1,7 @@
-package functionalTestingProject.service;
+package twuFunctionalTesting.service;
 
-import functionalTestingProject.domain.Order;
-import functionalTestingProject.domain.db.GenericRepository;
+import twuFunctionalTesting.domain.Order;
+import twuFunctionalTesting.domain.db.GenericRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

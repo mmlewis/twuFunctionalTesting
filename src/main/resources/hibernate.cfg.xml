@@ -21,9 +21,9 @@
 
         <property name="hibernate.id.new_generator_mappings">true</property>
 
-        <mapping class="functionalTestingProject.domain.Order"/>
+        <mapping class="twuFunctionalTesting.domain.Order"/>
 
-        <mapping class="functionalTestingProject.domain.Item"/>
+        <mapping class="twuFunctionalTesting.domain.Item"/>
 
     </session-factory>
 

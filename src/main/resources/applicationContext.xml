@@ -13,7 +13,7 @@
 
     <context:annotation-config/>
     <mvc:annotation-driven/>
-    <context:component-scan base-package="functionalTestingProject"/>
+    <context:component-scan base-package="twuFunctionalTesting"/>
     <mvc:default-servlet-handler/>
 
     <bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
@@ -33,13 +33,13 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
-    <bean id="orderRepository" class="functionalTestingProject.domain.db.GenericRepository">
-        <constructor-arg value="functionalTestingProject.domain.Order"/>
+    <bean id="orderRepository" class="twuFunctionalTesting.domain.db.GenericRepository">
+        <constructor-arg value="twuFunctionalTesting.domain.Order"/>
         <constructor-arg ref="sessionFactory"/>
     </bean>
 
-    <bean id="itemRepository" class="functionalTestingProject.domain.db.GenericRepository">
-        <constructor-arg value="functionalTestingProject.domain.Item"/>
+    <bean id="itemRepository" class="twuFunctionalTesting.domain.db.GenericRepository">
+        <constructor-arg value="twuFunctionalTesting.domain.Item"/>
         <constructor-arg ref="sessionFactory"/>
     </bean>
 
